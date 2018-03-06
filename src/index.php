@@ -5,3 +5,4 @@ echo "Host headers: " . $_SERVER['HTTP_HOST'] . "<br>";
 echo "Client IP: " . $_SERVER['REMOTE_ADDR'] . "<br>";
 echo "Hits: " . include("counter.php");
 //phpinfo();
+?>
