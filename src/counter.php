@@ -1,13 +1,14 @@
 <?php
 
-//opens countlog.txt
-$datei = fopen("./countlog.txt","r+");
-//read the number of hits
+//opens countlog.txt to read the number of hits
+$datei = fopen("countlog.txt","r");
 $count = fgets($datei,1000);
-//increment and display count
+fclose($datei);
 $count=$count + 1 ;
 echo "$count" ;
-// write new count
+
+// opens countlog.txt to change new hit number
+$datei = fopen("countlog.txt","w");
 fwrite($datei, $count);
 fclose($datei);
 
