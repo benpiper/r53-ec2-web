@@ -12,13 +12,13 @@ $dbip = gethostbyname($dbhostname);
 $dbstatus = "NOT CONNECTED";
 
 if ($dbip === $dbhostname) {
-    $dbip = "RESOLUTION FAILED";
+    $dbip = "<strong>RESOLUTION FAILED</strong>";
 }
 
 //open tcp connection
 $fp = fsockopen($dbip, 80, $errno, $errstr, 2);
 if($fp) {
-    $dbstatus = "CONNECTED";
+    $dbstatus = "<span class=good>CONNECTED</span>";
     fclose($fp);
 }
 
@@ -38,6 +38,6 @@ echo "<tr><td>Database status:</td><td>$dbstatus</td></tr>";
 echo "<tr><td>Client IP:</td><td>" . $_SERVER['REMOTE_ADDR'] . "</td></tr>";
 echo "<tr><td>Client hostname:</td><td>" . gethostbyaddr ($_SERVER['REMOTE_ADDR']) . "</td></tr>";
 echo "<tr><td>Host headers:</td><td>" . $_SERVER['HTTP_HOST'] . "</td></tr>";
-echo "<tr><td>Hits:</td><td>$hits</td></tr>";
+echo "<tr><td>Hits:</td><td><span class=hits>$hits</span></td></tr>";
 echo "</table></body>";
 ?>

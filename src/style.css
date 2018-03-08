@@ -8,3 +8,14 @@ table {
 body {
     background-color: white;
 }
+strong {
+    color: #7D2345;
+}
+
+.good {
+    color: #77A032;
+}
+
+.hits {
+    color: #F15B2A;
+}
