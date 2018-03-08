@@ -16,13 +16,17 @@ if($fp) {
     $dbstatus = "CONNECTED";
     fclose($fp);
 }
-echo "<head><title>TEST</title>";
+
+$hits = counter("countlog.txt");
+$publicip = file_get_contents('http://169.254.169.254/2016-09-02/meta-data/public-ipv4');
+
+echo "<head><title>$publicip | $hits</title><style>";
 include("style.css");
-echo "</head><body>";
+echo "</style></head><body>";
 
 echo "Local hostname: " . file_get_contents('http://169.254.169.254/2016-09-02/meta-data/local-hostname') . "<br>";
 echo "Public hostname: " . file_get_contents('http://169.254.169.254/2016-09-02/meta-data/public-hostname') . "<br>";
-echo "Public IP: " . file_get_contents('http://169.254.169.254/2016-09-02/meta-data/public-ipv4') . "<br>";
+echo "Public IP: $publicip<br>";
 echo "Availability zone: ". file_get_contents('http://169.254.169.254/2016-09-02/meta-data/placement/availability-zone') . "<br>";
 echo "Host headers: " . $_SERVER['HTTP_HOST'] . "<br>";
 echo "Database hostname: " . $dbhostname . "<br>";
@@ -30,6 +34,6 @@ echo "Database IP: $dbip<br>";
 echo "Database status: $dbstatus<br>";
 echo "Client IP: " . $_SERVER['REMOTE_ADDR'] . "<br>";
 echo "Client hostname: " . gethostbyaddr ($_SERVER['REMOTE_ADDR']) . "<br>";
-echo "Hits: " . counter("countlog.txt");
+echo "Hits: $hits";
 echo "</body>";
 ?>
