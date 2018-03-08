@@ -1,7 +1,10 @@
-body {
+table {
     font-size: 18px;
     font-family: monospace;
     color: #1F778D;
     line-height: 1.5;
+    background-color: white;
+}
+body {
     background-color: white;
 }
