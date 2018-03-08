@@ -2,6 +2,8 @@ FROM alpine:latest
 LABEL Maintainer="Ben Piper <ben@benpiper.com>" \
       Description="dns-test-web"
 
+ENV RES_OPTIONS="retrans:1 retry:1 timeout:1 attempts:1"
+
 # Install packages
 RUN apk --no-cache add php7 php7-fpm php7-mysqli php7-json php7-openssl php7-curl \
     php7-zlib php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-ctype \
