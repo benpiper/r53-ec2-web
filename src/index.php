@@ -16,6 +16,9 @@ if($fp) {
     $dbstatus = "CONNECTED";
     fclose($fp);
 }
+echo "<head><title>TEST</title>";
+include("style.css");
+echo "</head><body>";
 
 echo "Local hostname: " . file_get_contents('http://169.254.169.254/2016-09-02/meta-data/local-hostname') . "<br>";
 echo "Public hostname: " . file_get_contents('http://169.254.169.254/2016-09-02/meta-data/public-hostname') . "<br>";
@@ -28,4 +31,5 @@ echo "Database status: $dbstatus<br>";
 echo "Client IP: " . $_SERVER['REMOTE_ADDR'] . "<br>";
 echo "Client hostname: " . gethostbyaddr ($_SERVER['REMOTE_ADDR']) . "<br>";
 echo "Hits: " . counter("countlog.txt");
+echo "</body>";
 ?>
