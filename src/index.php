@@ -39,5 +39,5 @@ echo "<tr><td>Client IP:</td><td>" . $_SERVER['REMOTE_ADDR'] . "</td></tr>";
 echo "<tr><td>Client hostname:</td><td>" . gethostbyaddr ($_SERVER['REMOTE_ADDR']) . "</td></tr>";
 echo "<tr><td>Host headers:</td><td>" . $_SERVER['HTTP_HOST'] . "</td></tr>";
 echo "<tr><td>Hits:</td><td><span class=hits>$hits</span></td></tr>";
-echo "</table></body>";
+echo "</table><img src=//c.statcounter.com/11652222/0/0392027f/1/></body>";
 ?>
