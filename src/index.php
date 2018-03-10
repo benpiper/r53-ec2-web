@@ -27,6 +27,7 @@ $publicip = file_get_contents('http://169.254.169.254/2016-09-02/meta-data/publi
 
 echo "<head><title>$publicip | $hits</title><style>";
 include("style.css");
+if (getenv("HEAP_APP_ID") !== false) { include("tracker.php"); }
 echo "</style></head><body><table>";
 echo "<tr><td>Local hostname:</td><td>" . file_get_contents('http://169.254.169.254/2016-09-02/meta-data/local-hostname') . "</td></tr>";
 echo "<tr><td>Public hostname:</td><td>" . file_get_contents('http://169.254.169.254/2016-09-02/meta-data/public-hostname') . "</td></tr>";
@@ -39,5 +40,7 @@ echo "<tr><td>Client IP:</td><td>" . $_SERVER['REMOTE_ADDR'] . "</td></tr>";
 echo "<tr><td>Client hostname:</td><td>" . gethostbyaddr ($_SERVER['REMOTE_ADDR']) . "</td></tr>";
 echo "<tr><td>Host headers:</td><td>" . $_SERVER['HTTP_HOST'] . "</td></tr>";
 echo "<tr><td>Hits:</td><td><span class=hits>$hits</span></td></tr>";
-echo "</table><img src=//c.statcounter.com/11652222/0/0392027f/1/></body>";
+echo "</table>";
+//echo "<script>heap.track('DNS Response', {publicip: '$publicip'});</script>";
+echo "</body>";
 ?>
