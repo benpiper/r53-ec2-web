@@ -27,8 +27,9 @@ $publicip = file_get_contents('http://169.254.169.254/2016-09-02/meta-data/publi
 
 echo "<head><title>$publicip | $hits</title><style>";
 include("style.css");
+echo "</style>";
 if (getenv("HEAP_APP_ID") !== false) { include("tracker.php"); }
-echo "</style></head><body><table>";
+echo "</head><body><table>";
 echo "<tr><td>Local hostname:</td><td>" . file_get_contents('http://169.254.169.254/2016-09-02/meta-data/local-hostname') . "</td></tr>";
 echo "<tr><td>Public hostname:</td><td>" . file_get_contents('http://169.254.169.254/2016-09-02/meta-data/public-hostname') . "</td></tr>";
 echo "<tr><td>Public IP:</td><td>$publicip</td></tr>";
