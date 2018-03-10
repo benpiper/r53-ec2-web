@@ -42,6 +42,6 @@ echo "<tr><td>Client hostname:</td><td>" . gethostbyaddr ($_SERVER['REMOTE_ADDR'
 echo "<tr><td>Host headers:</td><td>" . $_SERVER['HTTP_HOST'] . "</td></tr>";
 echo "<tr><td>Hits:</td><td><span class=hits>$hits</span></td></tr>";
 echo "</table>";
-//echo "<script>heap.track('DNS Response', {publicip: '$publicip'});</script>";
+if (getenv("HEAP_APP_ID") !== false) { echo "<script>heap.track('DNS Response', {publicip: '$publicip'});</script>"; }
 echo "</body>";
 ?>
