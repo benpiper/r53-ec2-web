@@ -30,8 +30,8 @@ echo "<tr><td>Local hostname:</td><td>" . file_get_contents('http://169.254.169.
 echo "<tr><td>Public hostname:</td><td>" . file_get_contents('http://169.254.169.254/2016-09-02/meta-data/public-hostname') . "</td></tr>";
 echo "<tr><td>Public IP:</td><td>$publicip</td></tr>";
 echo "<tr><td>Availability zone:</td><td>". file_get_contents('http://169.254.169.254/2016-09-02/meta-data/placement/availability-zone') . "</td></tr>";
-echo "<tr><td>Database hostname:</td><td>" . $dbhostname . "</td></tr>";
 if ($dbhostname !== false) {
+    echo "<tr><td>Database hostname:</td><td>" . $dbhostname . "</td></tr>";
     echo "<tr><td>Database IP:</td><td>$dbip</td></tr>";
     echo "<tr><td>Database status:</td><td>$dbstatus</td></tr>";
 }

@@ -1,6 +1,6 @@
 FROM alpine:latest
 LABEL Maintainer="Ben Piper <ben@benpiper.com>" \
-      Description="dns-test-web"
+      Description="r53-ec2-web"
 
 ENV RES_OPTIONS="retrans:1 retry:1 timeout:1 attempts:1" \
     # DBHOSTNAME="db.benpiper.host" \
