@@ -1,9 +1,9 @@
-# dns-test-web
+# r53-ec2-web
 
 Usage
 -----
 
-    docker run -p 80:80 -e DBHOSTNAME=db.benpiper.host. benpiper/dns-test-web
+    docker run -p 80:80 -e DBHOSTNAME=db.benpiper.host. benpiper/r53-ec2-web
 
 For other environment variables you can set at runtime, see below.
 
