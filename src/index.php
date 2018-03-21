@@ -11,7 +11,7 @@ if ($dbhostname !== false) {
     }
 
     //open tcp connection
-    $fp = fsockopen($dbip, 80, $errno, $errstr, 2);
+    $fp = fsockopen($dbip, 22, $errno, $errstr, 2);
     if($fp) {
         $dbstatus = "<span class=good>CONNECTED</span>";
         fclose($fp);
